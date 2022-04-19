@@ -9,7 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Entity;
 
+@Entity
 public class Docente {
 
 	@Id
@@ -31,7 +33,7 @@ public class Docente {
 	
 	/*
 	 * Metto nel database tutti i corsi di un docente. Si assume che il corso 
-	 * non può avere un cambio di cattedra e quindi tolto il docente, tolgo tutti i suoi corsi
+	 * non puÃ² avere un cambio di cattedra e quindi tolto il docente, tolgo tutti i suoi corsi
 	 */
 	@OneToMany(mappedBy = "curatore", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Corso> corsi;
