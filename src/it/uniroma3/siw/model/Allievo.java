@@ -3,6 +3,7 @@ package it.uniroma3.siw.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+@Entity
 public class Allievo {
 
 	@Id
@@ -33,11 +35,11 @@ public class Allievo {
 	private String email;
 	
 	/*
-	 * Quando io immetto un allievo nel Db Ë corretto anche immettere la societ‡ di appartenenza
-	 * ma non ha senso rimuoverla perche altri alievi potrebbero appartenere alla stessa societ‡
+	 * Quando io immetto un allievo nel Db √® corretto anche immettere la societ√† di appartenenza
+	 * ma non ha senso rimuoverla perche altri alievi potrebbero appartenere alla stessa societ√†
 	 */
 	@OneToOne(cascade = {CascadeType.PERSIST})
-	private Societ‡ societ‡;
+	private Societ√† societ√†;
 	
 	@ManyToMany
 	private List<Corso> corsi;
